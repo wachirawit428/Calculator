@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+       function calculate() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var menu = document.getElementById("menu").value;
+      var result;
+
+      if (menu === "1") {
+        result = num1 + num2;
+      } else if (menu === "2") {
+        result = num1 - num2;
+      } else if (menu === "3") {
+        result = num1 * num2;
+      } else if (menu === "4") {
+        result = num1 / num2;
+      } else if (menu === "5") {
+        result = Math.pow(num1, num2);
+      }
+
+      document.getElementById("result").innerHTML = "ผลลัพธ์: " + result;
+    } 
+    </script>
+</head>
+<body>
+    <h1>เครื่องคิดเลข</h1>
+  <label for="num1">ตัวเลขที่ 1:</label>
+  <input type="number" id="num1"><br><br>
+
+  <label for="num2">ตัวเลขที่ 2:</label>
+  <input type="number" id="num2"><br><br>
+
+  <label for="menu">เลือกเมนู:</label>
+  <select id="menu">
+    <option value="1">บวก (+)</option>
+    <option value="2">ลบ (-)</option>
+    <option value="3">คูณ (*)</option>
+    <option value="4">หาร (/)</option>
+    <option value="5">ยกกำลัง (^)</option>
+  </select><br><br>
+
+  <button onclick="calculate()">คำนวณ</button><br><br>
+
+  <div id="result"></div>
+</body>
+</html>
